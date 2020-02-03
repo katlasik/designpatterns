@@ -16,15 +16,15 @@ public class WaterLevelApp {
 
     public static void main(String[] args) throws InterruptedException {
 
-        var observable = new WaterLevelObservable();
+        Observable<Double> observable = null;
 
         new WaterLevelSensor(observable::notifyObservers).start();
 
         var emailSenderObserver = new EmailSenderObserver();
         var smsSenderObserver = new SmsSenderObserver();
 
-        observable.addObserver(emailSenderObserver);
-        observable.addObserver(smsSenderObserver);
+        // observable.addObserver(emailSenderObserver);
+        // observable.addObserver(smsSenderObserver);
 
 
     }

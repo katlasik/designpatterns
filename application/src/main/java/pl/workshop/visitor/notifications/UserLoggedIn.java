@@ -20,8 +20,4 @@ public class UserLoggedIn implements Notification {
         return timestamp;
     }
 
-    @Override
-    public void visit(NotificationVisitor visitor) {
-        visitor.visit(this);
-    }
 }

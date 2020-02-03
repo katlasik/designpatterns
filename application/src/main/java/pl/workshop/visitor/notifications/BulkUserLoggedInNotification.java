@@ -15,10 +15,4 @@ public class BulkUserLoggedInNotification implements Notification {
         return notifications;
     }
 
-    @Override
-    public void visit(NotificationVisitor visitor) {
-        for(UserLoggedIn notification: notifications) {
-            visitor.visit(notification);
-        }
-    }
 }

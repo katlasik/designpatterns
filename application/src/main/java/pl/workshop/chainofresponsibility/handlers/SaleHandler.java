@@ -7,24 +7,18 @@ import pl.workshop.chainofresposibility.refunds.RefundRequest;
 import java.util.Optional;
 
 public class SaleHandler implements RefundRequestHandler {
-    private RefundRequestHandler handler;
 
     public void setNext(RefundRequestHandler handler) {
-        this.handler = handler;
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     @Override
     public Optional<RefundRequestHandler> next() {
-        return Optional.ofNullable(handler);
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
+
     @Override
     public RefundDecision process(RefundRequest request) {
-        if(request.isFromSale()) {
-            return new RefundDecision(false, "Przedmiot z wyprzedaży.");
-        } else if(next().isPresent()) {
-            return next().get().process(request);
-        } else {
-            return new RefundDecision(false, "Brak decyzji.");
-        }
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 }

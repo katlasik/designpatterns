@@ -12,4 +12,11 @@ public interface FileSystemEntry {
 
     Iterator<FileSystemEntry> iterator();
 
+    static FileSystemEntry directory(String name, FileSystemEntry... children) {
+        throw new UnsupportedOperationException("Zaimplementuj!");
+    }
+
+    static FileSystemEntry file(String name, int size) {
+        throw new UnsupportedOperationException("Zaimplementuj!");
+    }
 }

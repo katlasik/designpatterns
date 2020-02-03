@@ -18,7 +18,10 @@ public class NotificationApp {
 
     public static void main(String[] args) {
 
-        var service = new NotificationDispatcher(new NotificationAdapter(new SmtpEmailSender(), new SmsSender()));
+        SmtpEmailSender smtpEmailSender = new SmtpEmailSender();
+        SmsSender SmsSender = new SmsSender();
+
+        NotificationDispatcher service = new NotificationDispatcher(null);
         service.start();
 
     }

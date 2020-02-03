@@ -1,7 +1,5 @@
 package pl.workshop.composite.filesystem;
 
-import pl.workshop.composite.iterators.SingleElementIterator;
-
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -27,12 +25,12 @@ public class File implements FileSystemEntry {
 
     @Override
     public boolean isDirectory() {
-        return false;
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     @Override
     public Iterator<FileSystemEntry> iterator() {
-        return new SingleElementIterator(this);
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     @Override

@@ -1,7 +1,5 @@
 package pl.workshop.composite.filesystem;
 
-import pl.workshop.composite.iterators.DirectoryIterator;
-import pl.workshop.composite.iterators.SingleElementIterator;
 
 import java.util.*;
 
@@ -18,7 +16,7 @@ public class Directory implements FileSystemEntry {
 
     @Override
     public int size() {
-        return entries.stream().mapToInt(FileSystemEntry::size).sum();
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     public List<FileSystemEntry> getEntries() {
@@ -32,19 +30,12 @@ public class Directory implements FileSystemEntry {
 
     @Override
     public boolean isDirectory() {
-        return true;
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     @Override
     public Iterator<FileSystemEntry> iterator() {
-
-        var children = new LinkedList<>(entries);
-
-        if (children.isEmpty()) {
-            return new SingleElementIterator<>(this);
-        } else {
-            return new DirectoryIterator(this);
-        }
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     @Override

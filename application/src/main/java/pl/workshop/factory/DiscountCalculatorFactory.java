@@ -1,12 +1,6 @@
 package pl.workshop.factory;
 
-import pl.workshop.factory.stategies.NoDiscountCalculator;
-import pl.workshop.factory.stategies.PercentageCalculator;
-import pl.workshop.factory.stategies.SecondItemIsFree;
-
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Month;
 
 public class DiscountCalculatorFactory {
 
@@ -19,26 +13,7 @@ public class DiscountCalculatorFactory {
     }
 
     public DiscountCalculator getDiscountCalculatorByDay(LocalDate date) {
-
-        if (isBlackFriday(date)) {
-            return new SecondItemIsFree();
-        } else if (date.getDayOfWeek().equals(DayOfWeek.FRIDAY)) {
-            return new PercentageCalculator(fridayDiscount);
-        } else if(isChristmas(date)) {
-            return new PercentageCalculator(christmasDiscount);
-        } else {
-            return new NoDiscountCalculator();
-        }
-
+        throw new UnsupportedOperationException("Zaimplentuj!");
     }
-
-    private boolean isChristmas(LocalDate date) {
-        return date.getDayOfMonth() > 24 && date.getMonth().equals(Month.DECEMBER);
-    }
-
-    private boolean isBlackFriday(LocalDate date) {
-        return date.getMonth().equals(Month.NOVEMBER) && (date.lengthOfMonth() - date.getDayOfMonth()) <= 7 && date.getDayOfWeek().equals(DayOfWeek.FRIDAY);
-    }
-
 
 }

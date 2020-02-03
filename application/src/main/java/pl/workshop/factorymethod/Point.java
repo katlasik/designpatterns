@@ -8,23 +8,19 @@ public class Point {
     private final double y;
 
     private Point(double x, double y) {
-        this.x = x;
-        this.y = y;
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     public static Point fromCartesian(double x, double y) {
-        return new Point(x, y);
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     public static Point fromPolar(double alpha, double r) {
-        var x = r * Math.cos(Math.toRadians(alpha));
-        var y = r * Math.sin(Math.toRadians(alpha));
-
-        return new Point(x, y);
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     public static Point fromRelative(Point relative, double x, double y) {
-        return new Point(relative.getX() + x, relative.getY() + y);
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     public double getX() {

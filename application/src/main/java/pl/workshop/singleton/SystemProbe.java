@@ -6,12 +6,8 @@ public class SystemProbe {
         System.out.println("Creating system probe...");
     }
 
-    private static class Holder {
-        private static final SystemProbe INSTANCE = new SystemProbe();
-    }
-
     static SystemProbe getInstance() {
-        return Holder.INSTANCE;
+        throw new UnsupportedOperationException("Zaimplementuj!");
     }
 
     public boolean isRunning() {

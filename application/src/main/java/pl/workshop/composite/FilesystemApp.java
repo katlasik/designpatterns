@@ -27,6 +27,7 @@ public class FilesystemApp {
 
     public static void main(String[] args) {
 
+
         FileSystemEntry directory = new Directory("home",
                 List.of(
                         new Directory(

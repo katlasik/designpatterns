@@ -19,8 +19,4 @@ public class UserConfirmed implements Notification {
         return email;
     }
 
-    @Override
-    public void visit(NotificationVisitor visitor) {
-        visitor.visit(this);
-    }
 }

@@ -8,7 +8,7 @@ public class FactorialCalculatorCreator {
     private FactorialCalculatorCreator() {}
 
     public static FactorialCalculator create(boolean caching) {
-        return caching ? new CachingFactorialCalculatorProxy() : new SimpleFactorialCalculator();
+        return new SimpleFactorialCalculator();
     }
 
 }

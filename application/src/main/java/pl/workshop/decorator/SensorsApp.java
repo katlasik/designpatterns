@@ -1,8 +1,6 @@
 package pl.workshop.decorator;
 
 import pl.workshop.decorator.sensors.SensorSource;
-import pl.workshop.decorator.sensors.TemperatureAveragingErrorsSource;
-import pl.workshop.decorator.sensors.TemperatureRepeatingSensorSource;
 import pl.workshop.decorator.sensors.TemperatureSensorSource;
 
 /**
@@ -21,7 +19,7 @@ public class SensorsApp {
 
         int i = 10;
 
-        SensorSource source = new TemperatureAveragingErrorsSource(new TemperatureRepeatingSensorSource(new TemperatureSensorSource()));
+        SensorSource source = new TemperatureSensorSource();
 
         while(i-- > 0) {
             System.out.printf("Temperatura wynosi: %.2f° C.\n", source.read());

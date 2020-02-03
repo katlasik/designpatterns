@@ -1,8 +1,6 @@
 package pl.workshop.chainofresponsibility;
 
-import pl.workshop.chainofresponsibility.handlers.PremiumCustomerHandler;
 import pl.workshop.chainofresponsibility.handlers.SaleHandler;
-import pl.workshop.chainofresponsibility.handlers.SmallCostHandler;
 import pl.workshop.chainofresposibility.refunds.RefundRequest;
 
 
@@ -22,11 +20,6 @@ public class ProcessingApp {
     public static void main(String[] args) {
 
         var refundHandler = new SaleHandler();
-        var premiumCustomerHandler = new PremiumCustomerHandler();
-        var smallCostHandler = new SmallCostHandler();
-
-        refundHandler.setNext(premiumCustomerHandler);
-        premiumCustomerHandler.setNext(smallCostHandler);
 
         var fromSale = refundHandler.process(new RefundRequest("młotek", 111, 14, false, true));
         var lowCost = refundHandler.process(new RefundRequest("gwoździe", 111, 14, false, false));
